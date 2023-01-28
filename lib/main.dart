@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Travel Alarm',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,7 +24,42 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Travel Alarm"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              //Flexible(child: Text("Start"), flex: 2,),
+              Text("Start"),
+
+
+              Expanded(child:
+                  ColoredBox(color: Colors.lime,
+              child:
+                  Padding(
+                    padding: EdgeInsets.all(24),
+                    child:
+              CircularProgressIndicator(
+                value: 0.5,
+                strokeWidth: 25,
+                color: Colors.cyan,
+                backgroundColor: Colors.amber,
+              ),
+                  ),
+                  ),
+                flex: 1,
+              )
+
+
+            ],
+          )
+        ),
+      )
     );
   }
 }
